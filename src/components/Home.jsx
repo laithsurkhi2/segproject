@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="min-h-screen flex flex-col justify-center lg:px-32 px-5 text-black bg-[url('assets/img/home.webp')] bg-no-repeat bg-cover opacity-90">
+      <div className="min-h-screen flex flex-col justify-center lg:px-32 px-5 text-black bg-[url('assets/img/home.jpg')] bg-no-repeat bg-cover opacity-90">
         <div className="w-full lg:w-4/5 space-y-5 mt-10">
           <h1 className="text-5xl font-bold leading-tight">
             Make the right choice for your health!
