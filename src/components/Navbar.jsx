@@ -14,7 +14,7 @@ const Navbar = () => {
         <Link to="/services" className="bg-orange-500 text-black py-2 px-4 rounded">Services</Link>
         <Link to="/team" className="bg-orange-500 text-black py-2 px-4 rounded">Team</Link>
         <Link to="/blogs" className="bg-orange-500 text-black py-2 px-4 rounded">Blog</Link>
-        
+        <Link to="/faqs" className="bg-orange-500 text-black py-2 px-4 rounded">FAQs</Link>
       </div>
       <div>
         <Link to="/appointment" className="bg-orange-500 hover:bg-blue-500  text-white py-2 px-4 rounded">Appointment</Link>

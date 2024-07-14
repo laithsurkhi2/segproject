@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Appointment = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [message, setMessage] = useState('');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -13,6 +15,12 @@ const Appointment = () => {
     expert: '',
     message: ''
   });
+
+  useEffect(() => {
+    if (location.state && location.state.message) {
+      setMessage(location.state.message);
+    }
+  }, [location.state]);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,6 +35,11 @@ const Appointment = () => {
     <div className="bg-orange-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold text-center mb-8">Make an Appointment</h2>
+        {message && (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+            <span className="block sm:inline">{message}</span>
+          </div>
+        )}
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">

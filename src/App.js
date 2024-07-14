@@ -9,7 +9,8 @@ import Blogs from './components/Blogs';
 import Appointment from './components/Appointment';
 import ConfirmationPage from './components/ConfirmationPage';
 import Footer from './components/Footer';
-
+import FAQs from './components/FAQs';
+import FamilyRecords from './components/FamilyRecords';
 const App = () => {
   return (
     <Router>
@@ -23,6 +24,8 @@ const App = () => {
           
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/confirmation" element={<ConfirmationPage />} />
+          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/family-records" element={<FamilyRecords />} />
         </Routes>
         <Footer /> 
       </div>

@@ -74,6 +74,22 @@ const Home = () => {
         </div>
       </div>
 
+      <div className="bg-orange-300 py-12 px-4 sm:px-6 lg:px-8 mt-10">
+       <div className="max-w-5xl mx-auto">
+         <h2 className="text-3xl font-bold text-center mb-8 text-blue-900">Our Patients Say !</h2>
+         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+           {testimonials.map((testimonial, index) => (
+             <div key={index} className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+               <FaQuoteLeft className="text-orange-500 mb-4 text-2xl" />
+               <p className="text-gray-700 mb-4">{testimonial.text}</p>
+               <FaQuoteRight className="text-orange-500 mb-4 text-2xl" />
+               <p className="text-blue-900 font-bold">{testimonial.name}</p>
+               <p className="text-gray-500">{testimonial.location}</p>
+             </div>
+           ))}
+         </div>
+       </div>
+     </div>
       
     </div>
   );

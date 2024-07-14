@@ -15,6 +15,7 @@ const Services = () => {
     navigate('/services');
   };
 
+  
   const handleFilterChange = (e) => {
     const { value, checked } = e.target;
     setSelectedFilter(prevState =>
@@ -69,14 +70,15 @@ const Services = () => {
             quidem.
           </p>
         </div>
+       
         <div className="mt-4 lg:mt-0 flex items-center">
           <button
             onClick={handleSeeServicesClick}
-            className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-backgroundColor transition duration-300 ease-in-out mr-4"
+            className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-backgroundColor transition duration-300 ease-in-out mr-2" // Added mr-2 for right margin
           >
-             Services
+            Services
           </button>
-          <FaSearch size={24} className="cursor-pointer" onClick={handleSearchClick} />
+          <FaSearch size={24} className="cursor-pointer ml-2" onClick={handleSearchClick} /> {/* Added ml-2 for left margin */}
         </div>
       </div>
 
@@ -117,13 +119,17 @@ const Services = () => {
           </div>
         </div>
       )}
+      
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 pt-14">
         {filteredServices.map(service => (
           <ServicesCard key={service.id} icon={service.icon} title={service.title} />
         ))}
       </div>
+      
     </div>
+
+    
   );
 };
 
