@@ -11,8 +11,10 @@ import ConfirmationPage from './components/ConfirmationPage';
 import Footer from './components/Footer';
 import FAQs from './components/FAQs';
 import FamilyRecords from './components/FamilyRecords';
+import { LanguageProvider } from './contexts/LanguageContext';
 const App = () => {
   return (
+    <LanguageProvider>
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -30,6 +32,8 @@ const App = () => {
         <Footer /> 
       </div>
     </Router>
+    </LanguageProvider>
+
   );
 };
 

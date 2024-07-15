@@ -28,12 +28,12 @@ const Services = () => {
   };
 
   const services = [
-    { id: 1, category: "healthcheck", icon: <FaHeartbeat size={35} className="text-backgroundColor" />, title: "Annual Physical Examination" },
-    { id: 2, category: "healthcheck", icon: <FaHeartbeat size={35} className="text-backgroundColor" />, title: "Cardiovascular Screening" },
-    { id: 3, category: "dentalcare", icon: <FaTeeth size={35} className="text-backgroundColor" />, title: "Routine Dental Check-ups" },
-    { id: 4, category: "dentalcare", icon: <FaTeeth size={35} className="text-backgroundColor" />, title: "Cosmetic Dentistry" },
-    { id: 5, category: "mentalhealth", icon: <MdHealthAndSafety size={35} className="text-backgroundColor" />, title: "Counseling and Therapy" },
-    { id: 6, category: "mentalhealth", icon: <MdHealthAndSafety size={35} className="text-backgroundColor" />, title: "Psychiatric Consultation" }
+    { id: 1, category: "healthcheck", icon: <FaHeartbeat size={35} className="text-backgroundColor" />, title: "Annual Physical Examination", description: "Regular check-up to monitor health and detect early signs of illness.", tooltip: "Health Check" },
+    { id: 2, category: "healthcheck", icon: <FaHeartbeat size={35} className="text-backgroundColor" />, title: "Cardiovascular Screening", description: "Screening tests to assess heart health and detect cardiovascular issues.", tooltip: "Health Check" },
+    { id: 3, category: "dentalcare", icon: <FaTeeth size={35} className="text-backgroundColor" />, title: "Routine Dental Check-ups", description: "Regular dental check-ups and cleaning to maintain oral health.", tooltip: "Dental Care" },
+    { id: 4, category: "dentalcare", icon: <FaTeeth size={35} className="text-backgroundColor" />, title: "Cosmetic Dentistry", description: "Cosmetic dental procedures to enhance smile aesthetics.", tooltip: "Dental Care" },
+    { id: 5, category: "mentalhealth", icon: <MdHealthAndSafety size={35} className="text-backgroundColor" />, title: "Counseling and Therapy", description: "Therapeutic sessions to address emotional and psychological issues.", tooltip: "Mental Health" },
+    { id: 6, category: "mentalhealth", icon: <MdHealthAndSafety size={35} className="text-backgroundColor" />, title: "Psychiatric Consultation", description: "Consultation with a psychiatrist for diagnosis and treatment of mental health disorders.", tooltip: "Mental Health" }
   ];
 
   const filteredServices = selectedFilter.length === 0 
@@ -66,19 +66,18 @@ const Services = () => {
             Our Services
           </h1>
           <p className="mt-2 text-center lg:text-start">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus,
-            quidem.
+            Check out our range of services which varies from health, dentistry, and mental health services!
           </p>
         </div>
        
         <div className="mt-4 lg:mt-0 flex items-center">
           <button
             onClick={handleSeeServicesClick}
-            className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-backgroundColor transition duration-300 ease-in-out mr-2" // Added mr-2 for right margin
+            className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-backgroundColor transition duration-300 ease-in-out mr-2"
           >
             Services
           </button>
-          <FaSearch size={24} className="cursor-pointer ml-2" onClick={handleSearchClick} /> {/* Added ml-2 for left margin */}
+          <FaSearch size={24} className="cursor-pointer ml-2" onClick={handleSearchClick} />
         </div>
       </div>
 
@@ -120,16 +119,18 @@ const Services = () => {
         </div>
       )}
       
-
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 pt-14">
         {filteredServices.map(service => (
-          <ServicesCard key={service.id} icon={service.icon} title={service.title} />
+          <ServicesCard
+            key={service.id}
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+            tooltip={service.tooltip}
+          />
         ))}
       </div>
-      
     </div>
-
-    
   );
 };
 
