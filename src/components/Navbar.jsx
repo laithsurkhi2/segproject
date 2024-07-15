@@ -1,9 +1,25 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { FaVolumeUp } from 'react-icons/fa';
 import { LanguageContext } from '../contexts/LanguageContext';
 
 const Navbar = () => {
   const { language, toggleLanguage } = useContext(LanguageContext);
+  const synth = window.speechSynthesis;
+  const location = useLocation();
+
+  const handleSpeech = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    synth.speak(utterance);
+  };
+
+  const toggleSpeech = () => {
+    if (location.pathname === '/') {
+      handleSpeech("Welcome to HealthTime, click on the button in the home page to explore our services.");
+    } else if (location.pathname === '/services') {
+      handleSpeech("Our services vary from health check, dental care, and mental health services.");
+    }
+  };
 
   return (
     <nav className="bg-backgroundColor p-4 flex items-center justify-between">
@@ -40,6 +56,12 @@ const Navbar = () => {
           className={`py-2 px-4 rounded transition duration-300 ease-in-out ${language === 'fr' ? 'bg-orange-500 text-white' : 'bg-gray-300 text-black hover:bg-gray-400'}`}
         >
           FR
+        </button>
+        <button
+          onClick={toggleSpeech}
+          className="bg-transparent text-orange-500 hover:text-orange-600 focus:outline-none"
+        >
+          <FaVolumeUp size={24} />
         </button>
       </div>
     </nav>
