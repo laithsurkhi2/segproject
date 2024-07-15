@@ -48,10 +48,8 @@ const TeamMember = ({ name, specialty, image }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic (e.g., send data to backend, show confirmation)
-    // For demonstration, we'll just show a confirmation message
+    
     setMessageSent(true);
-    // Clear form fields
     setNameValue('');
     setPhoneValue('');
     setMessageValue('');
