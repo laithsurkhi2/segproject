@@ -26,8 +26,8 @@ const Home = () => {
   const { language } = useContext(LanguageContext);
   const navigate = useNavigate();
 
-  const handleSeeServicesClick = () => {
-    navigate('/services');
+  const handleSeeAppointmentClick = () => {
+    navigate('/appointment');
   };
 
   const handleTeamClick = () => {
@@ -45,10 +45,10 @@ const Home = () => {
             {language === 'en' ? 'Contact HealthTime now to get the best medical assistance out there!' : 'Contactez HealthTime dès maintenant pour obtenir la meilleure assistance médicale possible!'}
           </p>
           <button
-            onClick={handleSeeServicesClick}
+            onClick={handleSeeAppointmentClick}
             className="bg-brightColor text-white px-4 py-2 rounded-md hover:bg-backgroundColor transition duration-300 ease-in-out"
           >
-            {language === 'en' ? 'Explore Our Services' : 'Explorer Nos Services'}
+            {language === 'en' ? 'Appointment' : 'prendre rendez-vous'}
           </button>
         </div>
       </div>

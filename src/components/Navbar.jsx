@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const toggleSpeech = () => {
     if (location.pathname === '/') {
-      handleSpeech("Welcome to HealthTime, click on the button in the home page to explore our services.");
+      handleSpeech("Welcome to HealthTime, click on the button in the home page to book an appointment.");
     } else if (location.pathname === '/services') {
       handleSpeech("Our services vary from health check, dental care, and mental health services.");
     }
@@ -63,6 +63,7 @@ const Navbar = () => {
         >
           <FaVolumeUp size={24} />
         </button>
+      
       </div>
     </nav>
   );
